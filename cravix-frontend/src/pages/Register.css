@@ -1,0 +1,498 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================
+   REGISTER PAGE
+========================================= */
+
+.register-container {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 82, 82, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(255, 82, 82, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #fff7f7 0%,
+      #ffffff 50%,
+      #fff1f1 100%
+    );
+}
+
+
+/* =========================================
+   DECORATIVE BACKGROUND
+========================================= */
+
+.register-container::before,
+.register-container::after {
+  content: "";
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.register-container::before {
+  width: 280px;
+  height: 280px;
+
+  top: -100px;
+  left: -100px;
+
+  background: rgba(255, 76, 76, 0.08);
+}
+
+.register-container::after {
+  width: 350px;
+  height: 350px;
+
+  right: -120px;
+  bottom: -160px;
+
+  background: rgba(255, 76, 76, 0.06);
+}
+
+
+/* =========================================
+   REGISTER CARD
+========================================= */
+
+.register-card {
+  width: 100%;
+  max-width: 440px;
+
+  position: relative;
+  z-index: 2;
+
+  padding: 42px 42px 38px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 25px 70px rgba(30, 30, 30, 0.10),
+    0 8px 25px rgba(255, 76, 76, 0.06);
+
+  backdrop-filter: blur(12px);
+
+  animation: registerCardIn 0.55s ease forwards;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 46px;
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: -2px;
+
+  color: #171717;
+
+  cursor: default;
+
+  transition: transform 0.25s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+
+/* =========================================
+   RED C
+========================================= */
+
+.logo-red {
+  width: 58px;
+  height: 58px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 5px;
+
+  border-radius: 16px;
+
+  background: linear-gradient(
+    135deg,
+    #ff4d55,
+    #ff3942
+  );
+
+  color: white;
+
+  font-size: 39px;
+  font-weight: 800;
+
+  box-shadow:
+    0 10px 24px rgba(255, 70, 80, 0.28);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.logo:hover .logo-red {
+  transform: rotate(-5deg);
+
+  box-shadow:
+    0 12px 28px rgba(255, 70, 80, 0.34);
+}
+
+
+/* =========================================
+   TAGLINE
+========================================= */
+
+.tagline {
+  margin: 17px 0 0;
+
+  text-align: center;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+
+  color: #ff414b;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.register-card h2 {
+  margin: 34px 0 8px;
+
+  text-align: center;
+
+  font-size: 27px;
+
+  line-height: 1.2;
+
+  font-weight: 750;
+
+  color: #18181b;
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.subtitle {
+  max-width: 330px;
+
+  margin: 0 auto 28px;
+
+  text-align: center;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: #71717a;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.register-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.register-form input {
+  width: 100%;
+
+  height: 56px;
+
+  padding: 0 17px;
+
+  border: 1px solid #e4e4e7;
+
+  border-radius: 13px;
+
+  background: #fafafa;
+
+  color: #18181b;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.register-form input::placeholder {
+  color: #a1a1aa;
+}
+
+.register-form input:hover {
+  background: #ffffff;
+
+  border-color: #d4d4d8;
+}
+
+.register-form input:focus {
+  background: #ffffff;
+
+  border-color: #ff4d55;
+
+  box-shadow:
+    0 0 0 4px rgba(255, 77, 85, 0.10);
+}
+
+
+/* =========================================
+   REGISTER BUTTON
+========================================= */
+
+.register-form button {
+  width: 100%;
+
+  height: 56px;
+
+  margin-top: 5px;
+
+  border: none;
+
+  border-radius: 13px;
+
+  background: linear-gradient(
+    135deg,
+    #ff5159,
+    #ff3f48
+  );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 22px rgba(255, 65, 73, 0.22);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.register-form button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 28px rgba(255, 65, 73, 0.28);
+
+  filter: brightness(1.02);
+}
+
+.register-form button:active:not(:disabled) {
+  transform: translateY(0);
+
+  box-shadow:
+    0 7px 16px rgba(255, 65, 73, 0.20);
+}
+
+.register-form button:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+
+/* =========================================
+   LOGIN LINK
+========================================= */
+
+.login-link {
+  margin: 25px 0 0;
+
+  text-align: center;
+
+  font-size: 14px;
+
+  color: #71717a;
+}
+
+.login-link a {
+  margin-left: 3px;
+
+  color: #ff414b;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.login-link a:hover {
+  color: #e8323c;
+
+  text-decoration: underline;
+}
+
+
+/* =========================================
+   PAGE ANIMATION
+========================================= */
+
+@keyframes registerCardIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(18px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .register-container {
+    padding: 25px 16px;
+  }
+
+  .register-card {
+    max-width: 100%;
+
+    padding: 34px 24px 30px;
+
+    border-radius: 23px;
+  }
+
+  .logo {
+    font-size: 40px;
+  }
+
+  .logo-red {
+    width: 51px;
+    height: 51px;
+
+    font-size: 34px;
+
+    border-radius: 14px;
+  }
+
+  .register-card h2 {
+    margin-top: 29px;
+
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .register-form input,
+  .register-form button {
+    height: 53px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .register-card {
+    padding: 30px 20px 27px;
+  }
+
+  .logo {
+    font-size: 36px;
+  }
+
+  .logo-red {
+    width: 47px;
+    height: 47px;
+
+    font-size: 31px;
+  }
+
+  .register-card h2 {
+    font-size: 22px;
+  }
+}

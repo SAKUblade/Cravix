@@ -1,0 +1,231 @@
+/* ===============================
+   ORDERS TABLE
+================================ */
+
+.orders-table-wrapper {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+/* ===============================
+   TABLE
+================================ */
+
+.orders-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+.orders-table thead {
+  background: #f8fafc;
+}
+
+.orders-table th {
+  padding: 16px 20px;
+  text-align: left;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: #64748b;
+
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+/* ===============================
+   BODY
+================================ */
+
+.orders-table td {
+  padding: 17px 20px;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+
+  border-bottom: 1px solid #f1f5f9;
+
+  white-space: nowrap;
+}
+
+/* ===============================
+   ROW
+================================ */
+
+.orders-table tbody tr {
+  background: #ffffff;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.orders-table tbody tr:hover {
+  background: #fafafa;
+}
+
+/* Last row */
+
+.orders-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===============================
+   ID
+================================ */
+
+.orders-table td:first-child {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* ===============================
+   RESTAURANT
+================================ */
+
+.orders-table td:nth-child(2) {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* ===============================
+   ORDER TYPE
+================================ */
+
+.orders-table td:nth-child(3) {
+  text-transform: capitalize;
+}
+
+.orders-table td:nth-child(3)::first-letter {
+  text-transform: uppercase;
+}
+
+/* ===============================
+   TOTAL
+================================ */
+
+.orders-table td:nth-child(4) {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* ===============================
+   DATE
+================================ */
+
+.orders-table td:nth-child(6) {
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* ===============================
+   ACTION SELECT
+================================ */
+
+.orders-table select {
+  min-width: 140px;
+
+  padding: 9px 34px 9px 12px;
+
+  border: 1px solid #dbe1e8;
+  border-radius: 10px;
+
+  background-color: #ffffff;
+
+  color: #334155;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.orders-table select:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+}
+
+.orders-table select:focus {
+  border-color: #ef4444;
+
+  box-shadow:
+    0 0 0 3px rgba(239, 68, 68, 0.12);
+}
+
+.orders-table select:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ===============================
+   TABLE SCROLLBAR
+================================ */
+
+.orders-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.orders-table-wrapper::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+.orders-table-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+.orders-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1100px) {
+  .orders-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .orders-table {
+    min-width: 900px;
+  }
+}
+
+@media (max-width: 700px) {
+  .orders-table-wrapper {
+    border-radius: 14px;
+  }
+
+  .orders-table th {
+    padding: 14px 16px;
+    font-size: 11px;
+  }
+
+  .orders-table td {
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+
+  .orders-table select {
+    min-width: 130px;
+  }
+}

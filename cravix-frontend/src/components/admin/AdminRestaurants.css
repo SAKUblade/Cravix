@@ -1,0 +1,694 @@
+/* =========================
+   RESTAURANTS PAGE
+========================= */
+
+.admin-restaurants {
+  min-height: 100vh;
+  padding: 32px 36px 50px;
+  background: #f5f7fb;
+  box-sizing: border-box;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.restaurants-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.restaurants-header h1 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.restaurants-header p {
+  margin: 7px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* =========================
+   ADD BUTTON
+========================= */
+
+.add-restaurant-btn {
+  border: none;
+  border-radius: 11px;
+  padding: 11px 17px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  background: #ff5a3c;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 7px 18px rgba(255, 90, 60, 0.2);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-restaurant-btn:hover {
+  background: #ed4d31;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(255, 90, 60, 0.25);
+}
+
+.add-restaurant-btn:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   RESTAURANT COUNT
+========================= */
+
+.restaurants-count {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  margin-bottom: 24px;
+  padding: 11px 16px;
+
+  background: #ffffff;
+  border: 1px solid #e5eaf0;
+  border-radius: 12px;
+
+  color: #ff5a3c;
+
+  box-shadow: 0 5px 15px rgba(15, 23, 42, 0.04);
+}
+
+.restaurants-count svg {
+  width: 19px;
+  height: 19px;
+}
+
+.restaurants-count div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.restaurants-count strong {
+  color: #0f172a;
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.restaurants-count span {
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================
+   ADD RESTAURANT FORM
+========================= */
+
+.restaurant-form-card {
+  margin-bottom: 28px;
+
+  background: #ffffff;
+  border: 1px solid #e5eaf0;
+  border-radius: 18px;
+
+  padding: 24px;
+
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+.restaurant-form-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 24px;
+}
+
+.restaurant-form-header h2 {
+  margin: 0;
+
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 750;
+}
+
+.restaurant-form-header p {
+  margin: 5px 0 0;
+
+  color: #64748b;
+  font-size: 13px;
+}
+
+.close-form-btn {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #64748b;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.close-form-btn:hover {
+  background: #fef2f2;
+  color: #ef4444;
+  border-color: #fecaca;
+}
+
+/* =========================
+   FORM GRID
+========================= */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.admin-restaurants .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.admin-restaurants .form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.admin-restaurants .admin-restaurants .form-group label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.admin-restaurants .form-group input,
+.admin-restaurants .admin-restaurants .form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 11px 13px;
+
+  border: 1px solid #dbe2ea;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #1e293b;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-restaurants .admin-restaurants .form-group input {
+    height: 44px;
+}
+
+.admin-restaurants .admin-restaurants .form-group textarea {
+  resize: vertical;
+  min-height: 105px;
+}
+
+.admin-restaurants .admin-restaurants .form-group input::placeholder,
+.admin-restaurants .admin-restaurants .form-group textarea::placeholder {
+  color: #a1aab8;
+}
+
+.admin-restaurants .admin-restaurants .form-group input:focus,
+.admin-restaurants .admin-restaurants .form-group textarea:focus {
+  border-color: #ff5a3c;
+  box-shadow: 0 0 0 3px rgba(255, 90, 60, 0.1);
+}
+
+/* =========================
+   FORM ACTIONS
+========================= */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  margin-top: 22px;
+  padding-top: 20px;
+
+  border-top: 1px solid #eef2f6;
+}
+
+.cancel-btn,
+.save-restaurant-btn {
+  min-height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 9px 15px;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cancel-btn {
+  border: 1px solid #dbe2ea;
+  background: #ffffff;
+  color: #475569;
+}
+
+.cancel-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.save-restaurant-btn {
+  border: 1px solid #ff5a3c;
+  background: #ff5a3c;
+  color: #ffffff;
+}
+
+.save-restaurant-btn:hover {
+  background: #ed4d31;
+  border-color: #ed4d31;
+  transform: translateY(-1px);
+}
+
+.save-restaurant-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================
+   RESTAURANT GRID
+========================= */
+
+.restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* =========================
+   RESTAURANT CARD
+========================= */
+
+.restaurant-admin-card {
+  min-width: 0;
+
+  overflow: hidden;
+
+  background: #ffffff;
+  border: 1px solid #e5eaf0;
+  border-radius: 18px;
+
+  box-shadow: 0 7px 22px rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.restaurant-admin-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #dbe2ea;
+
+  box-shadow: 0 15px 32px rgba(15, 23, 42, 0.09);
+}
+
+/* =========================
+   RESTAURANT IMAGE
+========================= */
+
+.restaurant-image {
+  width: 100%;
+  height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #f1f5f9;
+  color: #94a3b8;
+}
+
+.restaurant-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+
+.restaurant-admin-card:hover .restaurant-image img {
+  transform: scale(1.04);
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.restaurant-card-content {
+  padding: 18px;
+}
+
+.restaurant-card-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.restaurant-card-title h3 {
+  margin: 0;
+
+  color: #0f172a;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 750;
+}
+
+.restaurant-category {
+  display: inline-flex;
+  align-items: center;
+
+  margin-top: 6px;
+  padding: 8px 18px;
+
+  background: #ff5a3c;
+  color: #ffffff;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: capitalize;
+  line-height: 1;
+
+  box-shadow: 0 6px 14px rgba(255, 90, 60, 0.18);
+}
+
+.restaurant-description {
+  margin: 12px 0 14px;
+
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+/* =========================
+   ADDRESS
+========================= */
+
+.restaurant-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+
+  padding-top: 13px;
+
+  border-top: 1px solid #fff;
+
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.restaurant-address svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+
+  color: #94a3b8;
+}
+
+/* =========================
+   MENU INFO
+========================= */
+
+.restaurant-menu-info {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 10px;
+
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.restaurant-menu-info svg {
+  color: #ff5a3c;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.restaurants-loading {
+  min-height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background: #ffffff;
+  border: 1px solid #e5eaf0;
+  border-radius: 18px;
+
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.restaurants-empty {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #ffffff;
+  border: 1px solid #e5eaf0;
+  border-radius: 18px;
+
+  color: #94a3b8;
+}
+
+.restaurants-empty svg {
+  margin-bottom: 12px;
+}
+
+.restaurants-empty h2 {
+  margin: 0 0 6px;
+
+  color: #334155;
+  font-size: 17px;
+}
+
+.restaurants-empty p {
+  margin: 0;
+
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* =========================
+   LOADING SPINNER
+========================= */
+
+.spin {
+  animation: restaurant-spin 0.9s linear infinite;
+}
+
+@keyframes restaurant-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+  .restaurants-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .admin-restaurants {
+    padding: 26px 22px 40px;
+  }
+
+  .restaurants-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .add-restaurant-btn {
+    width: 100%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-restaurants .form-group.full-width {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 650px) {
+  .admin-restaurants {
+    padding: 22px 16px 35px;
+  }
+
+  .restaurants-header h1 {
+    font-size: 26px;
+  }
+
+  .restaurants-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .restaurant-image {
+    height: 190px;
+  }
+
+  .restaurant-form-card {
+    padding: 18px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-btn,
+  .save-restaurant-btn {
+    width: 100%;
+  }
+}
+
+/* =========================
+   REMOVE RESTAURANT BUTTON
+========================= */
+
+.remove-restaurant-btn {
+  width: 100%;
+  margin-top: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 11px 14px;
+
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+
+  background: #fff5f5;
+  color: #dc2626;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.remove-restaurant-btn:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #b91c1c;
+
+  transform: translateY(-1px);
+}
+
+.remove-restaurant-btn:active {
+  transform: translateY(0);
+}
+
+.remove-restaurant-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.remove-restaurant-btn svg {
+  flex-shrink: 0;
+}

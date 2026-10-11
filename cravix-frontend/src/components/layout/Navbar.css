@@ -1,0 +1,250 @@
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    width:100%;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(0,0,0,.05);
+    transition:.35s;
+}
+
+.navbar-container{
+    max-width:1400px;
+    height:90px;
+    margin:auto;
+    padding:0 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    text-decoration:none;
+}
+
+.logo-icon{
+    width:58px;
+    height:58px;
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff4d4f,#ff7a18);
+    color:#fff;
+    font-size:28px;
+    box-shadow:0 15px 35px rgba(255,77,79,.35);
+    transition:.35s;
+}
+
+.logo:hover .logo-icon{
+    transform:rotate(-8deg) scale(1.08);
+}
+
+.logo-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.logo-text h1{
+    margin:0;
+    color:#202124;
+    font-size:30px;
+    font-weight:800;
+    letter-spacing:-1px;
+    line-height:1;
+}
+
+.logo-text span{
+    margin-top:4px;
+    color:#777;
+    font-size:13px;
+    font-weight:500;
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#444;
+    font-size:15px;
+    font-weight:600;
+    padding:12px 20px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#ff4d4f;
+    background:#fff2f2;
+}
+
+/* ==========================================
+   CART
+========================================== */
+
+.cart-link{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+/* ==========================================
+   RIGHT SIDE
+========================================== */
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.login-btn{
+    text-decoration:none;
+    color:#444;
+    font-size:15px;
+    font-weight:600;
+    padding:12px 22px;
+    border:1px solid #ececec;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    border-color:#ff4d4f;
+    color:#ff4d4f;
+    background:#fff5f5;
+}
+
+.register-btn{
+    text-decoration:none;
+    background:linear-gradient(135deg,#ff4d4f,#ff7a18);
+    color:#fff !important;
+    padding:13px 24px;
+    border-radius:14px;
+    font-weight:700;
+    box-shadow:0 12px 30px rgba(255,77,79,.30);
+    transition:.3s;
+}
+
+.register-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 18px 35px rgba(255,77,79,.40);
+}
+
+/* ==========================================
+   MOBILE MENU
+========================================== */
+
+.mobile-menu{
+    display:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:992px){
+
+    .navbar-container{
+        padding:0 24px;
+    }
+
+    .logo-text span{
+        display:none;
+    }
+
+    .nav-links{
+        gap:8px;
+    }
+
+    .nav-links a{
+        padding:10px 14px;
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .navbar-container{
+        height:80px;
+        padding:0 18px;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .nav-links{
+        position:fixed;
+        top:80px;
+        left:-100%;
+        width:100%;
+        background:rgba(255,255,255,.98);
+        backdrop-filter:blur(20px);
+        display:flex;
+        flex-direction:column;
+        gap:15px;
+        padding:30px;
+        box-shadow:0 20px 40px rgba(0,0,0,.08);
+        transition:.35s;
+    }
+
+    .nav-links.active{
+        left:0;
+    }
+
+    .nav-links a{
+        width:100%;
+        text-align:center;
+    }
+
+    .nav-actions{
+        display:none;
+    }
+
+    .logo-icon{
+        width:52px;
+        height:52px;
+        font-size:24px;
+    }
+
+    .logo-text h1{
+        font-size:26px;
+    }
+
+}
+.active-link{
+    color:#e53935 !important;
+    font-weight:700;
+}
+
+.active-link::after{
+    width:100% !important;
+}

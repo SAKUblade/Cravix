@@ -1,0 +1,41 @@
+.admin-navbar {
+  height: 70px;
+  min-height: 70px;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 32px;
+
+  border-bottom: 1px solid #e8edf3;
+
+  box-sizing: border-box;
+}
+
+.admin-navbar h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  letter-spacing: -0.01em;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .admin-navbar {
+    padding: 0 20px;
+  }
+
+  .admin-navbar h2 {
+    font-size: 16px;
+  }
+}

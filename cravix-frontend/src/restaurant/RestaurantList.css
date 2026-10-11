@@ -1,0 +1,309 @@
+/* ==========================================
+   RESTAURANT SECTION
+========================================== */
+
+.restaurant-section{
+    width:100%;
+    padding:60px 0 90px;
+    background:#fff;
+}
+
+.restaurant-container{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    padding:0 40px;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.restaurant-header{
+    width:100%;
+    margin-bottom:50px;
+}
+
+.restaurant-hero{
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+
+    gap:80px;
+}
+
+/* ==========================================
+   LEFT SIDE
+========================================== */
+
+.restaurant-left{
+    flex:1;
+    max-width:650px;
+}
+
+.restaurant-title{
+    font-size:3.2rem;
+    font-weight:800;
+    line-height:1.1;
+    color:#1f2937;
+    margin-bottom:18px;
+}
+
+.restaurant-description{
+    font-size:1rem;
+    color:#6b7280;
+    line-height:1.8;
+    max-width:520px;
+}
+
+/* ==========================================
+   RIGHT SIDE
+========================================== */
+
+.restaurant-right{
+    width:360px;
+
+    margin-left:auto;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:18px;
+
+    align-items:stretch;
+}
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+.restaurant-search{
+    position:relative;
+    width:100%;
+}
+
+.restaurant-search input{
+    width:100%;
+    height:58px;
+
+    padding:0 18px 0 52px;
+
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+
+    outline:none;
+
+    background:#fff;
+
+    font-size:.95rem;
+
+    transition:.3s;
+}
+
+.restaurant-search input:focus{
+    border-color:#ff5a3c;
+    box-shadow:0 0 0 4px rgba(255,90,60,.15);
+}
+
+.search-icon{
+    position:absolute;
+    top:50%;
+    left:18px;
+
+    transform:translateY(-50%);
+
+    color:#9ca3af;
+    font-size:18px;
+}
+
+/* ==========================================
+   SORT
+========================================== */
+
+.restaurant-sort{
+    width:100%;
+    height:58px;
+
+    padding:0 18px;
+
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+
+    outline:none;
+
+    background:#fff;
+
+    cursor:pointer;
+
+    font-size:.95rem;
+
+    transition:.3s;
+}
+
+.restaurant-sort:focus{
+    border-color:#ff5a3c;
+    box-shadow:0 0 0 4px rgba(255,90,60,.15);
+}
+/* ==========================================
+   RESULT COUNT
+========================================== */
+
+.restaurant-count{
+    margin-bottom:24px;
+
+    color:#6b7280;
+
+    font-size:.95rem;
+    font-weight:600;
+}
+
+/* ==========================================
+   RESTAURANT GRID
+========================================== */
+
+.restaurant-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fill,minmax(300px,1fr));
+
+    gap:30px;
+
+    align-items:start;
+}
+
+/* ==========================================
+   EMPTY STATE
+========================================== */
+
+.empty-state{
+    text-align:center;
+
+    padding:100px 20px;
+
+    border:2px dashed #e5e7eb;
+    border-radius:24px;
+}
+
+.empty-state h2{
+    font-size:2rem;
+    margin-bottom:12px;
+    color:#111827;
+}
+
+.empty-state p{
+    color:#6b7280;
+    font-size:1rem;
+}
+
+/* ==========================================
+   LOADING
+========================================== */
+
+.loading-title{
+    text-align:center;
+
+    padding:120px 0;
+
+    font-size:2rem;
+    font-weight:700;
+
+    color:#374151;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:1200px){
+
+.restaurant-container{
+    padding:0 30px;
+}
+
+.restaurant-grid{
+    grid-template-columns:
+    repeat(auto-fill,minmax(280px,1fr));
+}
+
+}
+
+@media (max-width:992px){
+
+.restaurant-hero{
+    flex-direction:column;
+    gap:40px;
+}
+
+.restaurant-left{
+    max-width:100%;
+}
+
+.restaurant-right{
+    width:100%;
+    margin-left:0;
+}
+
+.restaurant-title{
+    font-size:2.6rem;
+}
+
+.restaurant-grid{
+    grid-template-columns:
+    repeat(auto-fill,minmax(280px,1fr));
+}
+
+}
+
+@media (max-width:768px){
+
+.restaurant-section{
+    padding:50px 0 70px;
+}
+
+.restaurant-container{
+    padding:0 20px;
+}
+
+.restaurant-title{
+    font-size:2.2rem;
+}
+
+.restaurant-description{
+    font-size:.95rem;
+}
+
+.restaurant-grid{
+    grid-template-columns:1fr;
+    gap:24px;
+}
+
+.restaurant-search input,
+.restaurant-sort{
+    height:54px;
+}
+
+}
+
+@media (max-width:480px){
+
+.restaurant-title{
+    font-size:1.9rem;
+}
+
+.restaurant-description{
+    font-size:.9rem;
+}
+
+.restaurant-search input,
+.restaurant-sort{
+    font-size:.9rem;
+}
+
+.restaurant-count{
+    text-align:center;
+}
+
+}

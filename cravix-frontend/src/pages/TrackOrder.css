@@ -1,0 +1,865 @@
+/* =========================================================
+   TRACK ORDER PAGE
+========================================================= */
+
+.track-page {
+  min-height: 100vh;
+  padding: 55px 24px 80px;
+
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(254, 226, 226, 0.9) 0%,
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      rgba(219, 234, 254, 0.75) 0%,
+      transparent 32%
+    ),
+    #f8fafc;
+
+  animation: trackFade 0.45s ease;
+}
+
+.track-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.track-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  margin-bottom: 28px;
+}
+
+.track-header .back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: max-content;
+  min-width: max-content;
+
+  padding: 11px 16px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  color: #374151;
+  text-decoration: none;
+
+  font-size: 0.88rem;
+  font-weight: 700;
+
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+
+  transition: all 0.2s ease;
+}
+
+.track-header .back-btn:hover {
+  color: #dc2626;
+  border-color: #fecaca;
+  background: #fffafa;
+  transform: translateX(-2px);
+}
+
+.track-header h1 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 2rem;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.track-header p {
+  margin: 5px 0 0;
+
+  color: #6b7280;
+  font-size: 0.84rem;
+}
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.track-card {
+  padding: 26px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 22px;
+
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.065);
+
+  animation: trackFade 0.5s ease;
+}
+
+/* =========================================================
+   RESTAURANT
+========================================================= */
+
+.restaurant-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.restaurant-box h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.restaurant-box p {
+  margin: 5px 0 0;
+
+  color: #6b7280;
+
+  font-size: 0.78rem;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 7px 12px;
+
+  border-radius: 999px;
+
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+.status-badge.preparing {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #f97316;
+
+  animation: livePulse 1.4s infinite;
+}
+
+/* =========================================================
+   ETA
+========================================================= */
+
+.live-eta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 20px;
+  padding: 18px;
+
+  background: #eff6ff;
+
+  border: 1px solid #dbeafe;
+  border-radius: 15px;
+}
+
+.live-eta svg {
+  flex-shrink: 0;
+
+  color: #2563eb;
+}
+
+.live-eta span {
+  display: block;
+
+  color: #6b7280;
+
+  font-size: 0.74rem;
+}
+
+.live-eta h3 {
+  margin: 3px 0 0;
+
+  color: #111827;
+
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+/* =========================================================
+   DRIVER
+========================================================= */
+
+.driver-box {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 18px;
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+.driver-box img {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 3px solid #fee2e2;
+}
+
+.driver-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.driver-info h3 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.driver-info p {
+  margin: 3px 0 0;
+
+  color: #6b7280;
+
+  font-size: 0.74rem;
+}
+
+.driver-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  margin-top: 7px;
+  padding: 4px 8px;
+
+  background: #fffbeb;
+
+  color: #b45309;
+
+  border-radius: 999px;
+
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.driver-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.driver-actions button {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 11px;
+
+  background: #fff1f2;
+  color: #dc2626;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.driver-actions button:hover {
+  background: #dc2626;
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   LIVE PROGRESS
+========================================================= */
+
+.progress-card {
+  margin-top: 20px;
+  padding: 22px;
+
+  background: #f9fafb;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+}
+
+.progress-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 24px;
+}
+
+.progress-label {
+  display: inline-block;
+
+  margin-bottom: 7px;
+  padding: 5px 9px;
+
+  background: #fff1f2;
+  color: #dc2626;
+
+  border-radius: 999px;
+
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.progress-header h2 {
+  margin: 0 0 4px;
+
+  color: #111827;
+
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.progress-header p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 0.76rem;
+}
+
+.eta-pill {
+  flex-shrink: 0;
+
+  padding: 7px 11px;
+
+  background: #ecfdf3;
+  color: #15803d;
+
+  border-radius: 999px;
+
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+/* =========================================================
+   PROGRESS TIMELINE
+========================================================= */
+
+.progress-steps {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0;
+}
+
+.progress-row {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 13px;
+
+  min-height: 67px;
+}
+
+.progress-row:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  left: 17px;
+  top: 35px;
+
+  width: 2px;
+  height: 42px;
+
+  background: #e5e7eb;
+
+  z-index: 1;
+}
+
+.progress-row:has(.progress-icon.completed):not(:last-child)::after {
+  background: #dc2626;
+}
+
+.progress-row .progress-icon {
+  position: relative;
+  z-index: 2;
+
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f3f4f6;
+
+  border: 2px solid #e5e7eb;
+
+  color: #9ca3af;
+}
+
+.progress-icon.completed {
+  background: #fff1f2;
+  border-color: #fecaca;
+  color: #dc2626;
+}
+
+.progress-icon.active {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #ffffff;
+
+  box-shadow:
+    0 0 0 5px rgba(220, 38, 38, 0.08),
+    0 5px 14px rgba(220, 38, 38, 0.18);
+}
+
+.progress-icon.active::after {
+  content: "";
+
+  position: absolute;
+  inset: -5px;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(220, 38, 38, 0.2);
+
+  animation: activeRing 1.5s infinite;
+}
+
+.progress-content {
+  padding-top: 1px;
+}
+
+.progress-content h4 {
+  margin: 0 0 3px;
+
+  color: #111827;
+
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+.progress-content p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   ADDRESS
+========================================================= */
+
+.address-box {
+  margin-top: 18px;
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+.address-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 10px;
+}
+
+.address-title svg {
+  color: #dc2626;
+}
+
+.address-title h3 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.address-box p {
+  margin: 0;
+
+  padding-left: 30px;
+
+  color: #6b7280;
+
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   PAYMENT
+========================================================= */
+
+.payment-box {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  margin-top: 14px;
+  padding: 17px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+.payment-box svg {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  padding: 9px;
+
+  border-radius: 11px;
+
+  background: #ecfdf3;
+  color: #15803d;
+}
+
+.payment-box h3 {
+  margin: 0 0 3px;
+
+  color: #111827;
+
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.payment-box p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 0.74rem;
+}
+
+/* =========================================================
+   MAP
+========================================================= */
+
+.map-box {
+  position: relative;
+
+  height: 220px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 18px;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.78),
+      rgba(255, 255, 255, 0.78)
+    ),
+    url("https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&auto=format&fit=crop");
+
+  background-size: cover;
+  background-position: center;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+}
+
+.map-box h3 {
+  margin: 12px 0 4px;
+
+  color: #111827;
+
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.map-box p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 0.74rem;
+}
+
+.pulse-location {
+  width: 25px;
+  height: 25px;
+
+  color: #dc2626;
+
+  animation: locationPulse 1.4s infinite;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.track-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  margin-top: 20px;
+}
+
+.cancel-btn,
+.support-btn {
+  height: 50px;
+
+  border-radius: 12px;
+
+  font-size: 0.82rem;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.cancel-btn {
+  background: #ffffff;
+
+  border: 1px solid #fecaca;
+
+  color: #dc2626;
+}
+
+.cancel-btn:hover {
+  background: #fff1f2;
+
+  transform: translateY(-2px);
+}
+
+.support-btn {
+  border: none;
+
+  background: #111827;
+  color: #ffffff;
+}
+
+.support-btn:hover {
+  background: #1f2937;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 18px rgba(17, 24, 39, 0.18);
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes trackFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes livePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 7px rgba(249, 115, 22, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+  }
+}
+
+@keyframes activeRing {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+@keyframes locationPulse {
+  0% {
+    transform: scale(0.9);
+    filter: drop-shadow(0 0 0 rgba(220, 38, 38, 0));
+  }
+
+  50% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 10px rgba(220, 38, 38, 0.45));
+  }
+
+  100% {
+    transform: scale(0.9);
+    filter: drop-shadow(0 0 0 rgba(220, 38, 38, 0));
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+  .track-page {
+    padding: 30px 15px 55px;
+  }
+
+  .track-card {
+    padding: 20px;
+  }
+
+  .track-header {
+    align-items: flex-start;
+    gap: 13px;
+  }
+
+  .track-header h1 {
+    font-size: 1.65rem;
+  }
+
+  .restaurant-box {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .driver-box {
+    align-items: flex-start;
+  }
+
+  .progress-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .eta-pill {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .track-header {
+    flex-direction: column;
+  }
+
+  .driver-box {
+    flex-wrap: wrap;
+  }
+
+  .driver-info {
+    min-width: calc(100% - 75px);
+  }
+
+  .driver-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .track-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .map-box {
+    height: 190px;
+  }
+}
+
+/* =========================================================
+   TRACK ORDER EXTRA STATUS STYLES
+========================================================= */
+
+.status-badge.delivered {
+  background: #ecfdf3;
+  color: #15803d;
+}
+
+.status-badge.cancelled {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.pulse-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes trackSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

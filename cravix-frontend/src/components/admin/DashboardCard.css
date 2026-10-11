@@ -1,0 +1,130 @@
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* =========================
+   DASHBOARD CARD
+========================= */
+
+.dashboard-card {
+  position: relative;
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid #e8edf3;
+  border-radius: 18px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  border-color: #dfe5ec;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.09);
+}
+
+/* =========================
+   ICON
+========================= */
+
+.card-icon {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #ff5a3c, #ff7a45);
+  color: #ffffff;
+
+  box-shadow: 0 8px 18px rgba(255, 90, 60, 0.22);
+}
+
+.card-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke-width: 2.2;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.card-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.card-content h3 {
+  margin: 0 0 7px;
+
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-content h2 {
+  margin: 0;
+
+  color: #0f172a;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .dashboard-card {
+    padding: 18px;
+  }
+
+  .card-icon {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 14px;
+  }
+
+  .card-icon svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .card-content h2 {
+    font-size: 25px;
+  }
+}

@@ -1,0 +1,1104 @@
+/* =========================================================
+   ORDER DETAILS PAGE
+========================================================= */
+
+.order-details-page {
+  min-height: 100vh;
+  padding: 55px 24px 80px;
+
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(254, 226, 226, 0.9) 0%,
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      rgba(219, 234, 254, 0.75) 0%,
+      transparent 32%
+    ),
+    #f8fafc;
+
+  animation: pageFade 0.5s ease;
+}
+
+.order-details-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.details-header {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 28px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 11px 16px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  color: #374151;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+  color: #dc2626;
+  border-color: #fecaca;
+  background: #fffafa;
+  transform: translateX(-2px);
+}
+
+.details-header h1 {
+  margin: 0;
+
+  font-size: 2rem;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+
+  color: #111827;
+}
+
+.details-header p {
+  margin: 5px 0 0;
+
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   SUMMARY CARD
+========================================================= */
+
+.summary-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  padding: 24px 26px;
+  margin-bottom: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.07);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.09);
+}
+
+.summary-left {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  min-width: 0;
+}
+
+.summary-icon {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff1f2;
+  color: #dc2626;
+
+  border-radius: 16px;
+}
+
+.summary-left h2 {
+  margin: 0 0 4px;
+
+  font-size: 1.15rem;
+  font-weight: 750;
+
+  color: #111827;
+}
+
+.summary-left p {
+  margin: 0;
+
+  color: #6b7280;
+  font-size: 0.82rem;
+}
+
+.summary-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 9px;
+
+  flex-wrap: wrap;
+}
+
+.summary-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+.summary-right {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.summary-right h3 {
+  margin: 10px 0 0;
+
+  color: #dc2626;
+
+  font-size: 1.55rem;
+  font-weight: 850;
+  letter-spacing: -0.3px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 7px 12px;
+
+  border-radius: 999px;
+
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+.status.delivered {
+  background: #ecfdf3;
+  color: #15803d;
+}
+
+/* =========================================================
+   GENERAL CARD
+========================================================= */
+
+.details-card {
+  margin-bottom: 20px;
+  padding: 24px 26px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+
+  box-shadow: 0 7px 25px rgba(15, 23, 42, 0.055);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.details-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.075);
+}
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 16px;
+}
+
+.card-header h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+
+.card-header span {
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  background: #f3f4f6;
+  color: #6b7280;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   ORDER ITEMS
+========================================================= */
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 15px 0;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.order-item:first-of-type {
+  padding-top: 4px;
+}
+
+.order-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.order-item img {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  border-radius: 13px;
+
+  object-fit: cover;
+
+  background: #f3f4f6;
+}
+
+.item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-info h3 {
+  margin: 0 0 4px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: #111827;
+
+  font-size: 0.88rem;
+  font-weight: 750;
+}
+
+.item-info p {
+  margin: 0;
+
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+.item-qty {
+  width: 38px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+
+  color: #374151;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.item-price {
+  min-width: 78px;
+
+  text-align: right;
+
+  color: #dc2626;
+
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+/* =========================================================
+   ORDER STATUS
+========================================================= */
+
+.order-status {
+  position: relative;
+}
+
+.timeline {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0;
+}
+
+.timeline-item {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  min-height: 58px;
+}
+
+.timeline-item:last-child {
+  min-height: auto;
+}
+
+.timeline-icon {
+  position: relative;
+  z-index: 2;
+
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f3f4f6;
+  color: #9ca3af;
+
+  border: 2px solid #e5e7eb;
+
+  font-size: 0.72rem;
+}
+
+.timeline-item.completed .timeline-icon {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #ffffff;
+}
+
+.timeline-item.active .timeline-icon {
+  background: #fff1f2;
+  border-color: #dc2626;
+  color: #dc2626;
+
+  box-shadow: 0 0 0 5px rgba(220, 38, 38, 0.08);
+}
+
+.timeline-line {
+  position: absolute;
+
+  left: 14px;
+  top: 30px;
+
+  width: 2px;
+  height: calc(100% - 2px);
+
+  background: #e5e7eb;
+}
+
+.timeline-item.completed .timeline-line {
+  background: #dc2626;
+}
+
+.timeline-content {
+  padding-top: 2px;
+}
+
+.timeline-content h3 {
+  margin: 0 0 3px;
+
+  color: #374151;
+
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+.timeline-item.completed .timeline-content h3,
+.timeline-item.active .timeline-content h3 {
+  color: #111827;
+}
+
+.timeline-content p {
+  margin: 0;
+
+  color: #9ca3af;
+
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   BILL SUMMARY
+========================================================= */
+
+.bill-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px 0;
+
+  color: #6b7280;
+
+  font-size: 0.82rem;
+}
+
+.bill-row strong {
+  color: #374151;
+  font-weight: 700;
+}
+
+.bill-divider {
+  height: 1px;
+
+  margin: 14px 0;
+
+  background: #e5e7eb;
+}
+
+.discount {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.bill-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 14px;
+  padding: 16px 19px;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #dc2626,
+    #ef4444
+  );
+
+  color: #ffffff;
+
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.2);
+}
+
+.bill-total span {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.bill-total h2 {
+  margin: 0;
+
+  font-size: 1.35rem;
+  font-weight: 850;
+}
+
+/* =========================================================
+   ADDRESS
+========================================================= */
+
+.address-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.address-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #fff1f2;
+  color: #dc2626;
+}
+
+.address-info h3 {
+  margin: 1px 0 5px;
+
+  color: #111827;
+
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+.address-info p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   PAYMENT
+========================================================= */
+
+.payment-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.payment-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #ecfdf3;
+  color: #15803d;
+}
+
+.payment-info h3 {
+  margin: 0 0 4px;
+
+  color: #111827;
+
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+.payment-info p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 0.78rem;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.details-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+.invoice-btn,
+.reorder-btn,
+.support-btn {
+  height: 50px;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-size: 0.82rem;
+  font-weight: 750;
+
+  transition: all 0.2s ease;
+}
+
+.invoice-btn {
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  color: #374151;
+}
+
+.invoice-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  transform: translateY(-2px);
+}
+
+.reorder-btn {
+  background: #dc2626;
+  color: #ffffff;
+
+  box-shadow: 0 6px 15px rgba(220, 38, 38, 0.18);
+}
+
+.reorder-btn:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(220, 38, 38, 0.25);
+}
+
+.support-btn {
+  background: #111827;
+  color: #ffffff;
+}
+
+.support-btn:hover {
+  background: #1f2937;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   PAGE ANIMATION
+========================================================= */
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.summary-card,
+.details-card {
+  animation: pageFade 0.45s ease both;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+  .order-details-page {
+    padding: 30px 15px 55px;
+  }
+
+  .details-header {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .details-header h1 {
+    font-size: 1.65rem;
+  }
+
+  .summary-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .summary-right {
+    width: 100%;
+    text-align: left;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .summary-right h3 {
+    margin: 0;
+  }
+
+  .details-card {
+    padding: 20px;
+  }
+
+  .order-item {
+    gap: 11px;
+  }
+
+  .order-item img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .item-price {
+    min-width: 65px;
+    font-size: 0.82rem;
+  }
+
+  .details-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .details-header {
+    flex-direction: column;
+  }
+
+  .back-btn {
+    width: fit-content;
+  }
+
+  .summary-left {
+    align-items: flex-start;
+  }
+
+  .summary-meta {
+    gap: 8px;
+  }
+
+  .summary-right {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .order-item {
+    align-items: flex-start;
+  }
+
+  .item-qty {
+    display: none;
+  }
+
+  .item-price {
+    margin-left: auto;
+  }
+
+  .bill-total h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* =========================================================
+   FIX BACK BUTTON
+========================================================= */
+
+.details-header {
+  flex-wrap: nowrap;
+}
+
+.back-btn {
+  flex-shrink: 0;
+  width: max-content;
+  min-width: max-content;
+  white-space: nowrap;
+}
+
+.back-btn svg {
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   FIX BACK BUTTON
+========================================================= */
+
+.details-header {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: nowrap;
+}
+
+.details-header > div {
+  min-width: 0;
+}
+
+.back-btn {
+  flex-shrink: 0;
+  width: max-content;
+  min-width: max-content;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   ORDER STATUS TIMELINE
+========================================================= */
+
+.status-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 4px;
+}
+
+.status-step {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  min-height: 72px;
+}
+
+/* Last step doesn't need extra height */
+.status-step:last-child {
+  min-height: 40px;
+}
+
+
+/* =========================================================
+   STATUS ICON
+========================================================= */
+
+.status-step-icon {
+  position: relative;
+  z-index: 3;
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f3f4f6;
+  border: 2px solid #e5e7eb;
+
+  color: #9ca3af;
+
+  transition: all 0.25s ease;
+}
+
+
+/* Completed step */
+
+.status-step-icon.active {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #ffffff;
+
+  box-shadow: 0 5px 14px rgba(220, 38, 38, 0.18);
+}
+
+
+/* Current step */
+
+.status-step-icon.current {
+  background: #fff1f2;
+  border: 3px solid #dc2626;
+  color: #dc2626;
+
+  box-shadow:
+    0 0 0 5px rgba(220, 38, 38, 0.08),
+    0 5px 15px rgba(220, 38, 38, 0.12);
+}
+
+
+/* =========================================================
+   STATUS CONTENT
+========================================================= */
+
+.status-step-content {
+  padding-top: 2px;
+  padding-bottom: 12px;
+}
+
+.status-step-content h3 {
+  margin: 0 0 4px;
+
+  color: #9ca3af;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  transition: color 0.2s ease;
+}
+
+.status-step-content p {
+  margin: 0;
+
+  max-width: 520px;
+
+  color: #b0b5bd;
+
+  font-size: 0.76rem;
+  line-height: 1.45;
+
+  transition: color 0.2s ease;
+}
+
+
+/* Completed text */
+
+.status-step-icon.active + .status-step-content h3,
+.status-step:has(.status-step-icon.active)
+.status-step-content h3 {
+  color: #111827;
+}
+
+.status-step:has(.status-step-icon.active)
+.status-step-content p {
+  color: #6b7280;
+}
+
+
+/* Current text */
+
+.status-step:has(.status-step-icon.current)
+.status-step-content h3 {
+  color: #dc2626;
+  font-weight: 800;
+}
+
+.status-step:has(.status-step-icon.current)
+.status-step-content p {
+  color: #4b5563;
+}
+
+
+/* =========================================================
+   CONNECTING LINE
+========================================================= */
+
+.status-step-line {
+  position: absolute;
+
+  left: 18px;
+  top: 38px;
+
+  width: 2px;
+  height: 34px;
+
+  background: #e5e7eb;
+
+  z-index: 1;
+
+  transition: background 0.25s ease;
+}
+
+
+/* Completed connecting line */
+
+.status-step-line.active {
+  background: #dc2626;
+}
+
+
+/* =========================================================
+   ORDER ITEMS IMAGE BOX
+========================================================= */
+
+.item-image {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #fff1f2;
+  color: #dc2626;
+
+  border: 1px solid #fee2e2;
+}
+
+
+/* =========================================================
+   CUSTOMER NOTE
+========================================================= */
+
+.customer-note {
+  margin: 0;
+
+  padding: 14px 16px;
+
+  border-radius: 12px;
+
+  background: #f9fafb;
+  border: 1px solid #f1f5f9;
+
+  color: #4b5563;
+
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   MOBILE TIMELINE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .details-header {
+    align-items: flex-start;
+  }
+
+  .back-btn {
+    padding: 10px 13px;
+    font-size: 0.8rem;
+  }
+
+  .status-step {
+    gap: 12px;
+    min-height: 68px;
+  }
+
+  .status-step-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .status-step-line {
+    left: 16px;
+    top: 34px;
+    height: 34px;
+  }
+
+  .status-step-content h3 {
+    font-size: 0.84rem;
+  }
+
+  .status-step-content p {
+    font-size: 0.72rem;
+  }
+}
